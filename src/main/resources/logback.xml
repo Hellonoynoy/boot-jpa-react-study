@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-4level [%logger.%method:%line]- %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <!--    RULES for logging DEBUG < INFO < WARN < ERROR < FATAL.-->
+    <logger name="com.noynoy">
+        <level value="trace"/>
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.hibernate.SQL" level="DEBUG" />
+    <logger name="org.hibernate.type" level="TRACE" />
+    <logger name="org.hibernate.type.BasicTypeRegistry" level="WARN" />
+
+    <root>
+        <level value="info" />
+        <appender-ref ref="console" />
+    </root>
+
+</configuration>
