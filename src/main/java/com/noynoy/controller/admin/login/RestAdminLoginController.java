@@ -19,9 +19,6 @@ import javax.servlet.http.HttpSession;
 @Slf4j
 public class RestAdminLoginController {
 
-    private static final String MASTER_ROLE = "MASTER";
-
-
     @Autowired
     private AdminLoginService adminLoginService;
 
@@ -33,7 +30,6 @@ public class RestAdminLoginController {
 
         if(admin != null) {
             HttpSession session = request.getSession();
-            session.setAttribute("role",    MASTER_ROLE);
             session.setAttribute("adminId", admin.getAdminId());
             session.setAttribute("name",    admin.getName());
             returnString = "/admin/members";

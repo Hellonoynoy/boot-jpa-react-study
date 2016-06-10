@@ -37,10 +37,10 @@
                 <span> 입력하신 정보와 일치하는 회원이 없습니다. </span>
             </div>
             <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Username</label>
+                <label class="control-label visible-ie8 visible-ie9">UserId</label>
                 <div class="input-icon">
                     <i class="fa fa-user"></i>
-                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" id="adminId" /> </div>
+                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="UserId" id="adminId" /> </div>
             </div>
             <div class="form-group">
                 <label class="control-label visible-ie8 visible-ie9">Password</label>
@@ -65,11 +65,11 @@
             $("button").click(function () {
 
                 var data = {
-                    'adminId' : $("#adminId").val(),
+                    'userId' : $("#adminId").val(),
                     'password' : $("#password").val()
                 }
 
-                if(data.adminId.length != 0 && data.password.length != 0) {
+                if(data.userId.length != 0 && data.password.length != 0) {
                     $.post("/api/login", data)
                             .success(function(response) {
                                 if(response == 'none')
